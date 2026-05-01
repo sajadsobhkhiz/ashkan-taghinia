@@ -192,12 +192,12 @@ export default function Home() {
               {/* Photo with editorial frame */}
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-[#c9f55a] z-0" />
-                <div className="relative z-10 rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[4/5] shadow-2xl">
+                <div className="relative z-10 rounded-2xl overflow-hidden aspect-[3/4] md:aspect-[4/5] shadow-2xl">
                   <img
                     src={photoAction}
                     alt="Ashkan coaching"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    style={{ objectPosition: "center 3%" }}
+                    style={{ objectPosition: "center 5%" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1621]/80 via-transparent to-transparent" />
                 </div>
