@@ -2,10 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Trophy, Users, Target, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import photo1 from "@assets/ashkan_photos/IMG_4583.PNG";
-import photo2 from "@assets/ashkan_photos/IMG_4584.PNG";
-import photo3 from "@assets/ashkan_photos/IMG_4585.PNG";
-import photo4 from "@assets/ashkan_photos/IMG_4586.PNG";
+import photoAction from "@assets/IMG_4583_1777664938316.PNG";
+import photoPortrait from "@assets/IMG_4584_1777664938317.PNG";
 
 const WHATSAPP_LINK = "https://wa.me/17789293090";
 
@@ -27,52 +25,63 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-secondary">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden bg-secondary px-6 py-24">
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50"></div>
-          {/* Decorative court lines */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[800px] h-[60%] border border-white/10 rounded-3xl mix-blend-overlay"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-white/10 mix-blend-overlay"></div>
-        </div>
-        
-        <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="relative z-10 max-w-5xl mx-auto text-center"
-        >
-          <motion.div variants={fadeInUp} className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary-foreground backdrop-blur-sm">
-            <span className="text-sm font-medium tracking-wide uppercase">Elite Tennis Coaching • Vancouver, BC</span>
+      <section className="relative min-h-screen flex overflow-hidden bg-secondary">
+        {/* Left: text */}
+        <div className="relative z-10 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-24 w-full lg:w-1/2">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50 pointer-events-none"></div>
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="relative"
+          >
+            <motion.div variants={fadeInUp} className="inline-block mb-8 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary-foreground backdrop-blur-sm">
+              <span className="text-sm font-medium tracking-wide uppercase">Elite Tennis Coaching • Vancouver, BC</span>
+            </motion.div>
+            
+            <motion.h1 variants={fadeInUp} className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight mb-6 leading-[0.9]">
+              ASHKAN <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-muted to-white/60">TAGHINIA</span>
+            </motion.h1>
+            
+            <motion.p variants={fadeInUp} className="text-xl text-muted/80 max-w-md mb-10 font-light leading-relaxed">
+              Master your technique. Build your confidence. Own the court. Professional coaching for all skill levels.
+            </motion.p>
+            
+            <motion.div variants={fadeInUp}>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                <Button size="lg" className="h-14 px-8 text-lg bg-accent text-secondary hover:bg-accent/90 rounded-full font-bold uppercase tracking-wider group transition-all duration-300">
+                  Book Your Session
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+            </motion.div>
           </motion.div>
-          
-          <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tight mb-6 leading-[0.9]">
-            ASHKAN <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-muted to-white/60">TAGHINIA</span>
-          </motion.h1>
-          
-          <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-muted/80 max-w-2xl mx-auto mb-10 font-light">
-            Master your technique. Build your confidence. Own the court. Professional coaching for champions and beginners alike.
-          </motion.p>
-          
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-accent text-secondary hover:bg-accent/90 rounded-full font-bold uppercase tracking-wider group transition-all duration-300">
-                Book Your Session
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-          </motion.div>
-        </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50"
+          {/* Scroll Indicator */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute bottom-10 left-8 md:left-16 lg:left-24 flex flex-col items-start gap-2 text-white/50"
+          >
+            <span className="text-xs uppercase tracking-widest">Scroll</span>
+            <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
+          </motion.div>
+        </div>
+
+        {/* Right: portrait photo */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          className="hidden lg:block lg:w-1/2 relative"
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
+          <div className="absolute inset-0">
+            <img src={photoPortrait} alt="Ashkan Taghinia" className="w-full h-full object-cover object-top" />
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          </div>
         </motion.div>
       </section>
 
@@ -88,7 +97,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative group">
-                <img src={photo1} alt="Ashkan Taghinia coaching" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                <img src={photoAction} alt="Ashkan Taghinia coaching" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-60"></div>
                 <div className="absolute bottom-0 left-0 p-8">
                   <p className="text-white font-bold text-2xl tracking-tight">Focus.</p>
@@ -296,60 +305,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. PHOTO GALLERY */}
-      <section className="py-24 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
-          >
-            <div>
-              <h2 className="text-4xl font-extrabold mb-4">In Action.</h2>
-              <p className="text-xl text-muted-foreground max-w-xl">Energy, movement, and dedication on the Vancouver courts.</p>
-            </div>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="hidden md:inline-flex items-center gap-2 text-primary font-bold hover:underline underline-offset-4">
-              Join me on the court <ArrowRight size={20} />
-            </a>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="rounded-3xl overflow-hidden md:col-span-2 lg:col-span-2 lg:row-span-2 shadow-lg group relative"
-            >
-              <img src={photo2} alt="Ashkan Tennis Coaching Action" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-3xl overflow-hidden shadow-lg group relative"
-            >
-              <img src={photo3} alt="Ashkan Tennis Details" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-3xl overflow-hidden shadow-lg group relative"
-            >
-              <img src={photo4} alt="Ashkan Tennis Portrait" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* 5. WHY TRAIN WITH ASHKAN */}
       <section className="py-24 md:py-32 px-6 bg-secondary text-secondary-foreground relative overflow-hidden">
         {/* Subtle background decoration */}
@@ -400,7 +355,7 @@ export default function Home() {
               <div className="aspect-square rounded-full border border-secondary-foreground/10 flex items-center justify-center p-8 relative">
                 <div className="absolute inset-0 rounded-full border border-accent/30 animate-[spin_60s_linear_infinite]"></div>
                 <div className="aspect-square w-full rounded-full overflow-hidden relative">
-                  <img src={photo1} alt="Ashkan coaching" className="w-full h-full object-cover" />
+                  <img src={photoPortrait} alt="Ashkan coaching" className="w-full h-full object-cover object-top" />
                   <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay"></div>
                 </div>
               </div>
