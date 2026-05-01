@@ -372,29 +372,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. BOOKING CTA */}
-      <section className="py-32 px-6 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-5xl md:text-7xl font-black text-primary-foreground mb-8 tracking-tight">
-              Ready to Hit the Court?
-            </h2>
-            <p className="text-2xl text-primary-foreground/90 mb-12 font-light">
-              Message me directly to check availability and book your first session.
-            </p>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="inline-block">
-              <Button size="lg" className="h-16 px-10 text-xl bg-accent text-secondary hover:bg-white hover:text-secondary rounded-full font-bold uppercase tracking-wider group transition-all duration-300 shadow-[0_0_40px_rgba(202,255,0,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)]">
-                Chat on WhatsApp
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </Button>
-            </a>
-          </motion.div>
+      {/* 6. BOOKING CTA — Tennis Court */}
+      <section id="book" className="relative overflow-hidden" style={{ backgroundColor: "#1a7a3c", minHeight: "420px" }}>
+
+        {/* Tennis court SVG — top-down view filling the section */}
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 100 60"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Court surface shading */}
+          <rect x="0" y="0" width="100" height="60" fill="#1e8c44" />
+          <rect x="6" y="4" width="88" height="52" fill="#1a7a3c" />
+
+          {/* Outer doubles boundary */}
+          <rect x="6" y="4" width="88" height="52" fill="none" stroke="white" strokeWidth="0.5" />
+
+          {/* Singles sidelines */}
+          <line x1="17" y1="4" x2="17" y2="56" stroke="white" strokeWidth="0.4" />
+          <line x1="83" y1="4" x2="83" y2="56" stroke="white" strokeWidth="0.4" />
+
+          {/* Net — horizontal center line, slightly thicker */}
+          <line x1="6" y1="30" x2="94" y2="30" stroke="white" strokeWidth="1.2" />
+          {/* Net shadow/depth */}
+          <line x1="6" y1="30.8" x2="94" y2="30.8" stroke="rgba(0,0,0,0.25)" strokeWidth="0.6" />
+          {/* Net posts */}
+          <rect x="5" y="28.5" width="1.5" height="3" fill="white" rx="0.3" />
+          <rect x="93.5" y="28.5" width="1.5" height="3" fill="white" rx="0.3" />
+
+          {/* Service lines */}
+          <line x1="17" y1="16.5" x2="83" y2="16.5" stroke="white" strokeWidth="0.4" />
+          <line x1="17" y1="43.5" x2="83" y2="43.5" stroke="white" strokeWidth="0.4" />
+
+          {/* Center service line (T) */}
+          <line x1="50" y1="16.5" x2="50" y2="43.5" stroke="white" strokeWidth="0.4" />
+
+          {/* Center baseline marks */}
+          <line x1="49" y1="4" x2="51" y2="4" stroke="white" strokeWidth="0.8" />
+          <line x1="49" y1="56" x2="51" y2="56" stroke="white" strokeWidth="0.8" />
+
+          {/* Subtle court texture stripes */}
+          <rect x="6" y="4" width="88" height="26" fill="rgba(255,255,255,0.015)" />
+        </svg>
+
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-black/35" />
+
+        {/* Content */}
+        <div className="relative z-10 py-32 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight drop-shadow-lg">
+                Ready to Hit the Court?
+              </h2>
+              <p className="text-2xl text-white/85 mb-12 font-light drop-shadow">
+                Message me directly to check availability and book your first session.
+              </p>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="inline-block">
+                <Button size="lg" className="h-16 px-10 text-xl bg-accent text-secondary hover:bg-white hover:text-secondary rounded-full font-bold uppercase tracking-wider group transition-all duration-300 shadow-[0_0_40px_rgba(202,255,0,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)]">
+                  Chat on WhatsApp
+                  <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
