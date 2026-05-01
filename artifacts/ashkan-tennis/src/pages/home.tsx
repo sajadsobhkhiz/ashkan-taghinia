@@ -84,7 +84,8 @@ export default function Home() {
           <img
             src={photoPortrait}
             alt="Ashkan Taghinia"
-            className="w-full h-[115%] object-cover object-top"
+            className="w-full h-[115%] object-cover"
+            style={{ objectPosition: "center 20%" }}
           />
         </motion.div>
 
