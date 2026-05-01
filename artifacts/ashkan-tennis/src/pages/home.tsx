@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:py-24 w-full lg:w-1/2">
+        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:pt-24 lg:pb-36 w-full lg:w-1/2">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50 pointer-events-none hidden lg:block"></div>
           <motion.div 
             initial="hidden"
