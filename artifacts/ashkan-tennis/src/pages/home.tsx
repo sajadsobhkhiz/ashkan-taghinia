@@ -26,9 +26,16 @@ export default function Home() {
       
       {/* 1. HERO SECTION */}
       <section className="relative min-h-screen flex overflow-hidden bg-secondary">
+        {/* Mobile background photo */}
+        <div className="absolute inset-0 lg:hidden">
+          <img src={photoPortrait} alt="Ashkan Taghinia" className="w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 via-secondary/70 to-secondary/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent"></div>
+        </div>
+
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-24 w-full lg:w-1/2">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50 pointer-events-none"></div>
+        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:py-24 w-full lg:w-1/2">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50 pointer-events-none hidden lg:block"></div>
           <motion.div 
             initial="hidden"
             animate="visible"
@@ -63,14 +70,14 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-10 left-8 md:left-16 lg:left-24 flex flex-col items-start gap-2 text-white/50"
+            className="absolute bottom-8 left-8 md:left-16 lg:left-24 flex flex-col items-start gap-2 text-white/50"
           >
             <span className="text-xs uppercase tracking-widest">Scroll</span>
             <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
           </motion.div>
         </div>
 
-        {/* Right: portrait photo */}
+        {/* Right: portrait photo — desktop only */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -350,9 +357,20 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative hidden lg:block"
+              className="relative order-first lg:order-last"
             >
-              <div className="aspect-square rounded-full border border-secondary-foreground/10 flex items-center justify-center p-8 relative">
+              {/* Mobile: wide banner card */}
+              <div className="lg:hidden w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative">
+                <img src={photoPortrait} alt="Ashkan Taghinia" className="w-full h-full object-cover object-top" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="text-white font-bold text-xl tracking-tight">Ashkan Taghinia</p>
+                  <p className="text-white/70 text-sm">Professional Tennis Coach • Vancouver</p>
+                </div>
+              </div>
+
+              {/* Desktop: spinning circle */}
+              <div className="hidden lg:flex aspect-square rounded-full border border-secondary-foreground/10 items-center justify-center p-8 relative">
                 <div className="absolute inset-0 rounded-full border border-accent/30 animate-[spin_60s_linear_infinite]"></div>
                 <div className="aspect-square w-full rounded-full overflow-hidden relative">
                   <img src={photoPortrait} alt="Ashkan coaching" className="w-full h-full object-cover object-top" />
