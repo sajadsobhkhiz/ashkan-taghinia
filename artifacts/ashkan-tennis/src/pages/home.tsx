@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:pt-24 lg:pb-36 w-full lg:w-1/2">
+        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:py-24 w-full lg:w-1/2">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50 pointer-events-none hidden lg:block"></div>
           <motion.div 
             initial="hidden"
@@ -65,17 +65,18 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Scroll Indicator */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-8 left-8 md:left-16 lg:left-24 flex flex-col items-start gap-2 text-white/50"
-          >
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
-          </motion.div>
         </div>
+
+        {/* Scroll Indicator — pinned to section bottom */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-8 left-8 md:left-16 lg:left-24 z-20 flex flex-col items-start gap-2 text-white/50"
+        >
+          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
+        </motion.div>
 
         {/* Right: portrait photo — desktop only */}
         <motion.div
