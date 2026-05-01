@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:py-24 w-full lg:w-1/2">
+        <div className="relative z-10 flex flex-col justify-end lg:justify-center px-8 md:px-16 lg:px-24 pb-16 pt-24 lg:py-16 w-full lg:w-1/2">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50 pointer-events-none hidden lg:block"></div>
           <motion.div 
             initial="hidden"
@@ -46,12 +46,12 @@ export default function Home() {
               <span className="text-sm font-medium tracking-wide uppercase">Elite Tennis Coaching • Vancouver, BC</span>
             </motion.div>
             
-            <motion.h1 variants={fadeInUp} className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight mb-6 leading-[0.9]">
+            <motion.h1 variants={fadeInUp} className="text-6xl md:text-7xl font-extrabold text-white tracking-tight mb-4 leading-[0.9]">
               ASHKAN <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-muted to-white/60">TAGHINIA</span>
             </motion.h1>
             
-            <motion.p variants={fadeInUp} className="text-xl text-muted/80 max-w-md mb-10 font-light leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-xl text-muted/80 max-w-md mb-8 font-light leading-relaxed">
               Master your technique. Build your confidence. Own the court. Professional coaching for all skill levels.
             </motion.p>
             
@@ -66,17 +66,6 @@ export default function Home() {
           </motion.div>
 
         </div>
-
-        {/* Scroll Indicator — pinned to section bottom */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-8 md:left-16 lg:left-24 z-20 hidden lg:flex flex-col items-start gap-2 text-white/50"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
-        </motion.div>
 
         {/* Right: portrait photo — desktop only */}
         <motion.div
