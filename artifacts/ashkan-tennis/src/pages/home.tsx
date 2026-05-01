@@ -197,7 +197,7 @@ export default function Home() {
                     src={photoAction}
                     alt="Ashkan coaching"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    style={{ objectPosition: "center 10%" }}
+                    style={{ objectPosition: "center 3%" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1621]/80 via-transparent to-transparent" />
                 </div>
