@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Ashkan Taghinia - Tennis Coach"
+version = "1.0.0"
+id = "artifacts/ashkan-tennis"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25713
+
+[services.development]
+run = "pnpm --filter @workspace/ashkan-tennis run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ashkan-tennis", "run", "build" ]
+publicDir = "artifacts/ashkan-tennis/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25713"
+BASE_PATH = "/"
