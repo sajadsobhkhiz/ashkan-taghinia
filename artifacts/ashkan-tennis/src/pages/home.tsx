@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 
 import photoAction from "@assets/IMG_4583_1777664938316.PNG";
 import photoPortrait from "@assets/IMG_4584_1777664938317.PNG";
+import courtPhoto from "@assets/tennis_court_aerial.jpg";
 
 const WHATSAPP_LINK = "https://wa.me/17789293090";
 
@@ -373,51 +374,17 @@ export default function Home() {
       </section>
 
       {/* 6. BOOKING CTA — Tennis Court */}
-      <section id="book" className="relative overflow-hidden" style={{ backgroundColor: "#1a7a3c", minHeight: "420px" }}>
+      <section id="book" className="relative overflow-hidden" style={{ minHeight: "420px" }}>
 
-        {/* Tennis court SVG — top-down view filling the section */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 100 60"
-          preserveAspectRatio="xMidYMid slice"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Court surface shading */}
-          <rect x="0" y="0" width="100" height="60" fill="#1e8c44" />
-          <rect x="6" y="4" width="88" height="52" fill="#1a7a3c" />
-
-          {/* Outer doubles boundary */}
-          <rect x="6" y="4" width="88" height="52" fill="none" stroke="white" strokeWidth="0.5" />
-
-          {/* Singles sidelines */}
-          <line x1="17" y1="4" x2="17" y2="56" stroke="white" strokeWidth="0.4" />
-          <line x1="83" y1="4" x2="83" y2="56" stroke="white" strokeWidth="0.4" />
-
-          {/* Net — horizontal center line, slightly thicker */}
-          <line x1="6" y1="30" x2="94" y2="30" stroke="white" strokeWidth="1.2" />
-          {/* Net shadow/depth */}
-          <line x1="6" y1="30.8" x2="94" y2="30.8" stroke="rgba(0,0,0,0.25)" strokeWidth="0.6" />
-          {/* Net posts */}
-          <rect x="5" y="28.5" width="1.5" height="3" fill="white" rx="0.3" />
-          <rect x="93.5" y="28.5" width="1.5" height="3" fill="white" rx="0.3" />
-
-          {/* Service lines */}
-          <line x1="17" y1="16.5" x2="83" y2="16.5" stroke="white" strokeWidth="0.4" />
-          <line x1="17" y1="43.5" x2="83" y2="43.5" stroke="white" strokeWidth="0.4" />
-
-          {/* Center service line (T) */}
-          <line x1="50" y1="16.5" x2="50" y2="43.5" stroke="white" strokeWidth="0.4" />
-
-          {/* Center baseline marks */}
-          <line x1="49" y1="4" x2="51" y2="4" stroke="white" strokeWidth="0.8" />
-          <line x1="49" y1="56" x2="51" y2="56" stroke="white" strokeWidth="0.8" />
-
-          {/* Subtle court texture stripes */}
-          <rect x="6" y="4" width="88" height="26" fill="rgba(255,255,255,0.015)" />
-        </svg>
+        {/* Real tennis court photo */}
+        <img
+          src={courtPhoto}
+          alt="Tennis court aerial view"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
 
         {/* Dark overlay so text stays readable */}
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Content */}
         <div className="relative z-10 py-32 px-6">
