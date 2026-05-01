@@ -42,7 +42,7 @@ export default function Home() {
             variants={staggerContainer}
             className="relative"
           >
-            <motion.div variants={fadeInUp} className="inline-block mb-8 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary-foreground backdrop-blur-sm">
+            <motion.div variants={fadeInUp} className="hidden sm:inline-block mb-8 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary-foreground backdrop-blur-sm">
               <span className="text-sm font-medium tracking-wide uppercase">Elite Tennis Coaching • Vancouver, BC</span>
             </motion.div>
             
@@ -360,8 +360,8 @@ export default function Home() {
               className="relative order-first lg:order-last"
             >
               {/* Mobile: wide banner card */}
-              <div className="lg:hidden w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative">
-                <img src={photoPortrait} alt="Ashkan Taghinia" className="w-full h-full object-cover object-top" />
+              <div className="lg:hidden w-full aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl relative">
+                <img src={photoPortrait} alt="Ashkan Taghinia" className="w-full h-full object-cover" style={{ objectPosition: "center 8%" }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <p className="text-white font-bold text-xl tracking-tight">Ashkan Taghinia</p>
