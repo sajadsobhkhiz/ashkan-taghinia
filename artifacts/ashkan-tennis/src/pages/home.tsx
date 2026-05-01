@@ -72,7 +72,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-8 md:left-16 lg:left-24 z-20 flex flex-col items-start gap-2 text-white/50"
+          className="absolute bottom-8 left-8 md:left-16 lg:left-24 z-20 hidden lg:flex flex-col items-start gap-2 text-white/50"
         >
           <span className="text-xs uppercase tracking-widest">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
