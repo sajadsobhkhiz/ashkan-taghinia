@@ -99,11 +99,11 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-24 pb-32 w-full lg:w-[58%]">
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="space-y-6">
-            <motion.div variants={fadeIn} className="flex items-center gap-3">
-              <div className="h-px w-10 bg-[#c9f55a]" />
-              <span className="text-[#c9f55a] font-semibold text-sm uppercase tracking-[0.2em]">
+        <div className="relative z-10 flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-24 pb-24 md:pb-32 w-full lg:w-[58%]">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="space-y-5">
+            <motion.div variants={fadeIn} className="flex items-center gap-3 flex-wrap">
+              <div className="h-px w-8 bg-[#c9f55a] shrink-0" />
+              <span className="text-[#c9f55a] font-semibold text-xs md:text-sm uppercase tracking-[0.15em] leading-tight">
                 Elite Tennis Coaching · Vancouver, BC
               </span>
             </motion.div>
@@ -124,14 +124,14 @@ export default function Home() {
               Professional coaching for every skill level.
             </motion.p>
 
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-2">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
-                <button className="flex items-center justify-center gap-2 bg-[#c9f55a] text-[#0d1621] font-black text-base px-8 py-4 rounded-full hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(201,245,90,0.3)] uppercase tracking-wider group">
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-3 pt-2">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#c9f55a] text-[#0d1621] font-black text-base px-8 py-4 rounded-full hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(201,245,90,0.3)] uppercase tracking-wider group">
                   Book Your Session
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </a>
-              <a href="#plans" className="flex items-center justify-center gap-2 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-full hover:border-white/60 hover:bg-white/5 transition-all duration-300">
+              <a href="#plans" className="w-full sm:w-auto flex items-center justify-center gap-2 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-full hover:border-white/60 hover:bg-white/5 transition-all duration-300">
                 View Plans
               </a>
             </motion.div>
@@ -178,7 +178,7 @@ export default function Home() {
       <StatsTicker />
 
       {/* ── 2. ABOUT ── */}
-      <section className="py-28 md:py-36 px-6 bg-white relative z-20">
+      <section className="py-16 md:py-28 lg:py-36 px-6 bg-white relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
@@ -191,7 +191,7 @@ export default function Home() {
               {/* Photo with editorial frame */}
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-[#c9f55a] z-0" />
-                <div className="relative z-10 rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
+                <div className="relative z-10 rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[4/5] shadow-2xl">
                   <img
                     src={photoAction}
                     alt="Ashkan coaching"
@@ -259,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. TRAINING PLANS ── */}
-      <section id="plans" className="py-28 md:py-36 px-6 bg-[#0d1621] relative overflow-hidden">
+      <section id="plans" className="py-16 md:py-28 lg:py-36 px-6 bg-[#0d1621] relative overflow-hidden">
         {/* Background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#c9f55a]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -269,7 +269,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-20"
           >
             <p className="text-[#c9f55a] font-semibold text-sm uppercase tracking-[0.2em] mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-8 bg-[#c9f55a] inline-block" />
@@ -413,17 +413,17 @@ export default function Home() {
       </section>
 
       {/* ── 4. WHY TRAIN ── */}
-      <section className="py-28 md:py-36 px-6 bg-white relative">
+      <section className="py-16 md:py-28 lg:py-36 px-6 bg-white relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative order-last lg:order-first"
+              className="relative lg:order-first"
             >
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[4/5] shadow-2xl">
                 <img
                   src={photoPortrait}
                   alt="Ashkan Taghinia"
@@ -446,7 +446,7 @@ export default function Home() {
               viewport={{ once: true }}
               variants={stagger}
             >
-              <motion.div variants={fadeIn} className="mb-12">
+              <motion.div variants={fadeIn} className="mb-8 lg:mb-12">
                 <p className="text-[#1a7a3c] font-semibold text-sm uppercase tracking-[0.2em] mb-3 flex items-center gap-3">
                   <span className="h-px w-8 bg-[#1a7a3c] inline-block" />
                   The Ashkan Difference
@@ -503,7 +503,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d1621]/60 via-[#0d1621]/70 to-[#0d1621]/85" />
 
-        <div className="relative z-10 py-36 px-6">
+        <div className="relative z-10 py-20 md:py-36 px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -525,8 +525,8 @@ export default function Home() {
             <p className="text-xl text-white/70 mb-12 font-light max-w-xl mx-auto">
               Message me directly to check availability and book your first session.
             </p>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="inline-block">
-              <button className="flex items-center gap-3 bg-[#c9f55a] text-[#0d1621] font-black text-lg px-10 py-5 rounded-full hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_60px_rgba(201,245,90,0.35)] uppercase tracking-wider group mx-auto">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="block sm:inline-block">
+              <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#c9f55a] text-[#0d1621] font-black text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-full hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_60px_rgba(201,245,90,0.35)] uppercase tracking-wider group mx-auto">
                 Chat on WhatsApp
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
