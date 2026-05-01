@@ -249,9 +249,9 @@ export default function Home() {
                   { num: "100%", label: "Personalized" },
                   { num: "All", label: "Skill Levels" },
                 ].map((s, i) => (
-                  <div key={i} className="text-center py-5 px-3 rounded-xl bg-[#f5f7f0] border border-[#e8eed8]">
+                  <div key={i} className="text-center py-5 px-2 rounded-xl bg-[#f5f7f0] border border-[#e8eed8]">
                     <p className="text-3xl font-black text-[#0d1621]" style={{ fontFamily: "var(--font-display)" }}>{s.num}</p>
-                    <p className="text-xs font-semibold text-[#0d1621]/50 uppercase tracking-wider mt-1">{s.label}</p>
+                    <p className="text-[10px] font-semibold text-[#0d1621]/50 uppercase tracking-normal leading-tight mt-1">{s.label}</p>
                   </div>
                 ))}
               </motion.div>
